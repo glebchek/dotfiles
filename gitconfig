@@ -1,0 +1,18 @@
+[user]
+	name = Gleb Chekushin
+	email = mail@glebchek.com
+[core]
+	autocrlf = input
+	editor = kate
+[color]
+	ui = auto
+[pull]
+	ff = only
+	rebase = true
+[alias]
+	rbi = !git rebase -i HEAD~`git rev-list --count HEAD ^develop`
+	crw = difftool origin/develop
+[fetch]
+	prune = true
+[commit]
+	#gpgsign = true

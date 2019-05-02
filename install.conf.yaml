@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- link:
+    ~/.zshrc: zshrc
+    ~/.gitconfig: gitconfig
+    ~/.config/nvim/:
+        path: config/nvim/*
+        glob: true
+    ~/.config/systemd/user/:
+        path: config/systemd/user/*
+        glob: true
+    ~/.local/share/konsole/:
+        path: local/share/konsole/*
+        glob: true
+    ~/.local/share/nvim/site/autoload/plug.vim: managers/vim-plug/plug.vim
+    ~/.zplug: managers/zplug
