@@ -18,7 +18,6 @@ For now I am using these helpers:
 
 ## TODO
 
-- Make install script also init *vim-plug* and *zplug* submodules
 - Make nvim usable with language servers
 - Make zsh config more optimized and useful
 - Make configs more DE-independent and console-friendly
