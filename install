@@ -14,3 +14,10 @@ git -C "${MANAGERS_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${MANAGERS_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+read -p "Do you wish to install nvim plugins now? [y/n]: " yn
+case $yn in
+    [Yy]* ) nvim +PlugInstall +qall;;
+    [Nn]* ) exit;;
+    * ) echo "Please answer yes or no.";;
+esac
