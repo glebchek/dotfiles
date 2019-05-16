@@ -8,6 +8,8 @@ My configs are far from being optimal for now, but I will work on it. For exampl
 
 You are free to look, but keep in mind that it is not really usable because of the above reasons.
 
+This repo makes use of **environment.d** directory, so your system should be based on *systemd*. Right now it is the only restriction, and I am considering to get rid of it.
+
 ## Plugin managers
 
 For now I am using these helpers:
