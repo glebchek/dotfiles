@@ -6,6 +6,7 @@
 - link:
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
+    ~/.npmrc: npmrc
     ~/.config/nvim/:
         path: config/nvim/*
         glob: true

@@ -1,5 +1,5 @@
 export GOPATH="$HOME/go"
-export PATH="$HOME/.local/bin/:$(ruby -e 'print Gem.user_dir')/bin:$GOPATH/bin:$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.local/bin/:$GOPATH/bin:$HOME/.yarn/bin:$PATH"
 
 setopt correctall
 setopt HIST_IGNORE_DUPS
@@ -55,7 +55,7 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MODE='default'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh root_indicator context dir node_version nvm vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh root_indicator context dir node_version vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs ram disk_usage status time)
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M %d.%m}"
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uF109 %n@%m"
@@ -72,5 +72,3 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
-
-source /home/gleb/.nvm/nvm.sh
