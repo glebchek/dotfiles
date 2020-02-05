@@ -4,6 +4,7 @@ export PATH="$HOME/.local/bin/:$GOPATH/bin:$HOME/.yarn/bin:$PATH"
 setopt correctall
 setopt HIST_IGNORE_DUPS
 setopt menucomplete
+setopt extendedglob
 
 autoload -Uz promptinit
 promptinit
@@ -64,7 +65,8 @@ POWERLEVEL9K_CONTEXT_TEMPLATE="\uF109 %n@%m"
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "bhilburn/powerlevel9k", as:theme
+zplug "zsh-users/zsh-autosuggestions"
+zplug romkatv/powerlevel10k, as:theme, depth:1
 
 if ! zplug check; then
     zplug install
