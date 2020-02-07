@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export GOPATH="$HOME/go"
 export PATH="$HOME/.local/bin/:$GOPATH/bin:$HOME/.yarn/bin:$PATH"
 
@@ -50,27 +57,18 @@ extract () {
   fi
 }
 
-#####Powerline
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MODE='default'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh root_indicator context dir node_version vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs ram disk_usage status time)
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M %d.%m}"
-POWERLEVEL9K_CONTEXT_TEMPLATE="\uF109 %n@%m"
-#####
-
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug romkatv/powerlevel10k, as:theme, depth:1
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 if ! zplug check; then
     zplug install
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
