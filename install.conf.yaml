@@ -8,11 +8,9 @@
     ~/.p10k.zsh: p10k.zsh
     ~/.gitconfig: gitconfig
     ~/.npmrc: npmrc
+    ~/.pam_environment: pam_environment
     ~/.config/nvim/:
         path: config/nvim/*
-        glob: true
-    ~/.config/environment.d/:
-        path: config/environment.d/*
         glob: true
     ~/.config/systemd/user/:
         path: config/systemd/user/*
