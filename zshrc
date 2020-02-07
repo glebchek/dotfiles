@@ -62,6 +62,7 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "asdf-vm/asdf", use:"{asdf.sh,completions/asdf.bash}", defer:2
 
 if ! zplug check; then
     zplug install
