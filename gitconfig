@@ -16,3 +16,5 @@
 	prune = true
 [commit]
 	#gpgsign = true
+[credential]
+    helper = libsecret
