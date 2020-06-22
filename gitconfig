@@ -15,6 +15,6 @@
 [fetch]
 	prune = true
 [commit]
-	#gpgsign = true
+	gpgsign = true
 [credential]
     helper = libsecret
