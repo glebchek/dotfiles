@@ -3,24 +3,27 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-let g:ale_completion_enabled = 1
-let g:ale_set_balloons=1
-let g:ale_virtualtext_cursor = 1
-
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\   'typescript': ['prettier', 'tslint'],
-\}
-
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'itchyny/lightline.vim'
-  Plug 'dense-analysis/ale'
-  "" Plug 'leafgarland/typescript-vim'
-  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'danilamihailov/beacon.nvim'
+  "" Language-specific packages
+  Plug 'neovim/nvim-lsp'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'leafgarland/typescript-vim'
 call plug#end()
+
+"" Init all required lang servers
+"" npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin vscode-json-languageserver typescript-language-server
+lua<< EOF
+require'nvim_lsp'.html.setup{}
+require'nvim_lsp'.cssls.setup{}
+require'nvim_lsp'.jsonls.setup{}
+require'nvim_lsp'.tsserver.setup{}
+EOF
 
 " Required:
 filetype plugin indent on
@@ -38,9 +41,6 @@ let g:lightline = {
 \   'left': [ [ 'mode', 'paste' ] ]
 \  }
 \}
-
-au BufRead,BufNewFile *.ts set filetype=typescript
-au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 
 set hidden
 
