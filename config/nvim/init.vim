@@ -14,6 +14,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neovim/nvim-lsp'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'leafgarland/typescript-vim'
+  "" Autocompletion
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete-lsp'
 call plug#end()
 
 "" Init all required lang servers
@@ -41,6 +44,8 @@ let g:lightline = {
 \   'left': [ [ 'mode', 'paste' ] ]
 \  }
 \}
+
+let g:deoplete#enable_at_startup = 1
 
 set hidden
 
