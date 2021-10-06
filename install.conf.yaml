@@ -18,4 +18,5 @@
     ~/.local/share/konsole/:
         path: local/share/konsole/*
         glob: true
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim: managers/packer.nvim
     ~/.zplug: managers/zplug
