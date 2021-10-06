@@ -1,7 +1,3 @@
-[submodule "managers/vim-plug"]
-	path = managers/vim-plug
-	url = https://github.com/junegunn/vim-plug
-	shallow = true
 [submodule "managers/dotbot"]
 	path = managers/dotbot
 	url = https://github.com/anishathalye/dotbot.git

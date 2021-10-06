@@ -18,5 +18,4 @@
     ~/.local/share/konsole/:
         path: local/share/konsole/*
         glob: true
-    ~/.local/share/nvim/site/autoload/plug.vim: managers/vim-plug/plug.vim
     ~/.zplug: managers/zplug
