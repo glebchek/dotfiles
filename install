@@ -17,7 +17,7 @@ git submodule update --init --recursive "${MANAGERS_DIR}"
 
 read -p "Do you wish to install nvim plugins now? [y/n]: " yn
 case $yn in
-    [Yy]* ) nvim +PlugInstall +qall;;
+    [Yy]* ) nvim +PackerInstall +PackerCompile +qall;;
     [Nn]* ) exit;;
     * ) echo "Please answer yes or no.";;
 esac
