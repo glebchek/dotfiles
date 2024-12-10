@@ -16,4 +16,5 @@
     ~/.local/share/konsole/:
         path: local/share/konsole/*
         glob: true
+    ~/.local/share/asdf: managers/asdf
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim: managers/packer.nvim

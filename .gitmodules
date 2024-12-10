@@ -6,3 +6,6 @@
 	path = managers/packer.nvim
 	url = https://github.com/wbthomason/packer.nvim
 	shallow = true
+[submodule "managers/asdf"]
+	path = managers/asdf
+	url = https://github.com/asdf-vm/asdf
