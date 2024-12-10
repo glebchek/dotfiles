@@ -4,8 +4,6 @@
       create: true
 
 - link:
-    ~/.zshrc: zshrc
-    ~/.p10k.zsh: p10k.zsh
     ~/.gitconfig: gitconfig
     ~/.npmrc: npmrc
     ~/.pam_environment: pam_environment
@@ -19,4 +17,3 @@
         path: local/share/konsole/*
         glob: true
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim: managers/packer.nvim
-    ~/.zplug: managers/zplug

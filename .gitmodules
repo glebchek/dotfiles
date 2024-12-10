@@ -2,10 +2,6 @@
 	path = managers/dotbot
 	url = https://github.com/anishathalye/dotbot.git
 	shallow = true
-[submodule "managers/zplug"]
-	path = managers/zplug
-	url = https://github.com/zplug/zplug
-	shallow = true
 [submodule "managers/packer.nvim"]
 	path = managers/packer.nvim
 	url = https://github.com/wbthomason/packer.nvim
