@@ -10,6 +10,9 @@
     ~/.config/nvim/:
         path: config/nvim/*
         glob: true
+    ~/.config/fish/:
+        path: config/fish/*
+        glob: true
     ~/.config/systemd/user/:
         path: config/systemd/user/*
         glob: true
