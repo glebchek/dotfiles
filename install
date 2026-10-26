@@ -34,6 +34,7 @@ fi
 if command -v fish >/dev/null; then
     read -p "Install/update fish plugins now (fisher)? [y/N]: " yn
     case $yn in
-        [Yy]* ) fish -c 'fisher update';;
+        # empty fish_plugins makes fisher update exit non-zero — that's fine
+        [Yy]* ) fish -c 'fisher update' || echo "  (no plugins in fish_plugins yet)";;
     esac
 fi
