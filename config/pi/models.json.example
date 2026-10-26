@@ -1,0 +1,94 @@
+{
+  "providers": {
+    "local-llm": {
+      "baseUrl": "__LLM_SERVER_BASE_URL__",
+      "api": "openai-completions",
+      "compat": {
+        "supportsUsageInStreaming": false,
+        "maxTokensField": "max_tokens"
+      },
+      "models": [
+        {
+          "id": "deepseek-v4-flash-vision",
+          "input": [
+            "text"
+          ],
+          "contextWindow": 302144,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "high": "high",
+            "xhigh": "max"
+          },
+          "compat": {
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": false,
+            "thinkingFormat": "chat-template",
+            "chatTemplateKwargs": {
+              "$var": "thinking.effort"
+            },
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        },
+        {
+          "id": "glm-53-flash",
+          "input": [
+            "text"
+          ],
+          "contextWindow": 262144,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "minimal": "low",
+            "low": "low",
+            "medium": "high",
+            "high": "high",
+            "xhigh": "max"
+          },
+          "compat": {
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": false,
+            "thinkingFormat": "chat-template",
+            "chatTemplateKwargs": {
+              "reasoning_effort": "$var"
+            },
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        },
+        {
+          "id": "p40/gemma4-12b",
+          "name": "Qwen3.8 27B Q4 (P40)",
+          "input": [
+            "text"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 8192,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "xhigh",
+            "xhigh": "xhigh"
+          },
+          "compat": {
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": false,
+            "thinkingFormat": "chat-template",
+            "chatTemplateKwargs": {
+              "enable_thinking": {
+                "$var": "thinking.enabled"
+              },
+              "reasoning_effort": {
+                "$var": "thinking.effort"
+              },
+              "preserve_thinking": true
+            },
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        }
+      ]
+    }
+  }
+}

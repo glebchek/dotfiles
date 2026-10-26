@@ -1,0 +1,26 @@
+{
+  "lastChangelogVersion": "1.3.0",
+  "theme": "dark",
+  "defaultProvider": "kimi-coding",
+  "defaultModel": "k3-256k",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:@dietrichgebert/ponytail",
+    "npm:@ff-labs/pi-fff",
+    "npm:context-mode",
+    "npm:pi-web-access",
+    "npm:pi-mcp-adapter",
+    "npm:pi-skill-palette",
+    "npm:pi-intercom",
+    "npm:pi-subagents",
+    "npm:pi-lens",
+    "npm:@upstash/context7-pi",
+    "npm:remove-ai-writing-indicators",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@narumitw/pi-usage"
+  ],
+  "extensions": [
+    "-builtin:mcp"
+  ]
+}

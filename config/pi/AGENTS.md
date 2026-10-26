@@ -1,0 +1,8 @@
+# Local subagent policy
+
+- The user authorizes `gemma-helper` (`local-llm/p40/gemma4-12b`) for small, independent tasks in parallel with the parent: source lookup, summaries, test ideas, and patch proposals. Skip delegation when doing it directly is cheaper.
+- Local models run only asynchronously, in parallel with useful independent parent or agent work; never launch a local model as a foreground/blocking step. Use fresh context and give a narrow goal, exact paths, constraints, and a short expected output.
+- Hard scheduling rule: at most ONE active task per resolved local model, including across workflows and sessions. `local-llm/deepseek-v4-flash-vision` and `local-llm/p40/gemma4-12b` may run simultaneously; two DeepSeek tasks or two Gemma tasks may not. Aliases for the same model share its slot. Check active runs and coordinate ownership before launch; if the model is busy or ownership is uncertain, defer the task. Do not raise this per-model limit based on server capacity.
+- Gemma is a lower-capability assistant, not an authority. Independently read the cited source and verify every material claim before using it. Inspect proposed code and run relevant checks before applying or accepting it. Gemma's self-review is not independent verification.
+- Keep implementation, architecture, security decisions, final review and acceptance with the parent or a stronger model. Do not route `worker`, `reviewer`, or `oracle` to Gemma by default. Do not give Gemma write, shell, publishing, or nested-delegation tools.
+- Treat failures as failures: report the exact blocker; do not silently switch models or execution protocols. Follow any stricter task/project policy and an explicit user request not to delegate.

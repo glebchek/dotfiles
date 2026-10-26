@@ -1,0 +1,12 @@
+# mise global tools: node runtime + global npm CLIs.
+# Install everything:  mise install
+# Update everything:   mise up
+[tools]
+node = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:@playwright/cli" = "latest"
+"npm:@getpaseo/cli" = "latest"
+"npm:bigpowers" = "latest"
+"npm:skills" = "latest"
+"npm:add-mcp" = "latest"
+"npm:typescript" = "latest"

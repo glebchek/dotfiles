@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "onshape-fs": {
+      "url": "https://fs-mcp.labs.onshape.app/mcp",
+      "directTools": true
+    }
+  }
+}
