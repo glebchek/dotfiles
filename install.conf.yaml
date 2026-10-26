@@ -5,19 +5,17 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    ~/.npmrc: npmrc
-    ~/.pam_environment: pam_environment
-    ~/.config/nvim/:
-        path: config/nvim/*
-        glob: true
     ~/.config/fish/:
         path: config/fish/*
+        glob: true
+    ~/.config/environment.d/:
+        path: config/environment.d/*
         glob: true
     ~/.config/systemd/user/:
         path: config/systemd/user/*
         glob: true
-    ~/.local/share/konsole/:
-        path: local/share/konsole/*
-        glob: true
-    ~/.local/share/asdf: managers/asdf
-    ~/.local/share/nvim/site/pack/packer/start/packer.nvim: managers/packer.nvim
+    ~/.config/mise/config.toml: config/mise/config.toml
+    ~/.pi/agent/settings.json: config/pi/settings.json
+    ~/.pi/agent/mcp.json: config/pi/mcp.json
+    ~/.pi/agent/AGENTS.md: config/pi/AGENTS.md
+    ~/.agents/gemma-helper.md: config/pi/gemma-helper.md

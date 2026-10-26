@@ -15,9 +15,25 @@ git submodule update --init --recursive "${MANAGERS_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
-read -p "Do you wish to install nvim plugins now? [y/n]: " yn
-case $yn in
-    [Yy]* ) nvim +PackerInstall +PackerCompile +qall;;
-    [Nn]* ) exit;;
-    * ) echo "Please answer yes or no.";;
-esac
+# Optional: local LLM server for pi. Generates ~/.pi/agent/models.json
+# from the example (machine-specific, gitignored).
+read -p "Local LLM server base URL, e.g. http://10.0.0.2:8080/v1 [Enter to skip]: " llm_url
+if [ -n "$llm_url" ]; then
+    mkdir -p ~/.pi/agent
+    sed "s|__LLM_SERVER_BASE_URL__|${llm_url}|g" config/pi/models.json.example > ~/.pi/agent/models.json
+    echo "Wrote ~/.pi/agent/models.json"
+fi
+
+if command -v mise >/dev/null; then
+    read -p "Install mise tools now (node + global npm CLIs)? [y/N]: " yn
+    case $yn in
+        [Yy]* ) mise install;;
+    esac
+fi
+
+if command -v fish >/dev/null; then
+    read -p "Install/update fish plugins now (fisher)? [y/N]: " yn
+    case $yn in
+        [Yy]* ) fish -c 'fisher update';;
+    esac
+fi
