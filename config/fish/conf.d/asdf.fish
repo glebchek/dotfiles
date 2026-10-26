@@ -1,1 +1,0 @@
-source $HOME/.local/share/asdf/asdf.fish
